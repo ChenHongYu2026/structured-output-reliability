@@ -1,0 +1,74 @@
+{
+  "protocol_id": "ssc_replication_20260712",
+  "description": "SSC论文数据校准实验 — 重新在本地模型+API模型上运行D3角色分析、2×2阶乘、委派验证",
+  "experiments": [
+    {
+      "id": "E1_D3_ROLE_PROFILING",
+      "description": "D3角色合规分析 — 每个模型在PI/EC/RC/LD四个角色上的JSON格式合规率",
+      "models": {
+        "api": ["DeepSeek-V4-Pro", "MiniMax-M3"],
+        "local_gguf": [
+          "Qwen3.6-27B-Q5_K_M",
+          "Gemma-4-26B-Q4_0",
+          "GLM-4.7-Flash-Q5_K_M",
+          "HY-MT2-7B-Q8_0",
+          "Nemotron-30B-Q4_K_M",
+          "GPT-OSS-20B-MXFP4",
+          "DeepSeek-R1-Qwen3-8B-BF16"
+        ]
+      },
+      "roles": {
+        "PI": {"schema_type": "string_arrays", "ssc_approx": 1.4, "fields": 3},
+        "EC": {"schema_type": "array_of_objects", "ssc_approx": 8.5, "fields": 3},
+        "RC": {"schema_type": "flat_with_array", "ssc_approx": 2.0, "fields": 5},
+        "LD": {"schema_type": "flat", "ssc_approx": 1.4, "fields": 4}
+      },
+      "method": "n=3 per cell, temp=0.0, max_tokens=400 (local) / 8000 (API)",
+      "metrics": ["parse_rate", "compliance_rate", "finish_reason"]
+    },
+    {
+      "id": "E2_2X2_FACTORIAL",
+      "description": "2×2 Prompt Richness × Token Budget — 复制EXP-08核心发现",
+      "models": ["DeepSeek-V4-Pro", "MiniMax-M3"],
+      "design": {
+        "factors": [
+          {"name": "prompt", "levels": ["rich", "minimal"]},
+          {"name": "max_tokens", "levels": [8000, 30]}
+        ],
+        "depths": ["D1", "D5", "D9"],
+        "n_per_cell": 5
+      },
+      "metrics": ["parse_rate", "finish_reason"]
+    },
+    {
+      "id": "E3_DELEGATION",
+      "description": "Self-pairing vs Delegated pipeline — 验证委派有效性",
+      "pairs": [
+        {"reasoner": "MiniMax-M3", "formatter": "MiniMax-M3", "label": "MM→MM (self)"},
+        {"reasoner": "MiniMax-M3", "formatter": "DeepSeek-V4-Pro", "label": "MM→DS (delegated)"},
+        {"reasoner": "Qwen3.6-27B", "formatter": "Qwen3.6-27B", "label": "Qwen→Qwen (self)"},
+        {"reasoner": "Qwen3.6-27B", "formatter": "DeepSeek-V4-Pro", "label": "Qwen→DS (delegated)"},
+        {"reasoner": "Gemma-4-26B", "formatter": "Gemma-4-26B", "label": "Gemma→Gemma (self)"},
+        {"reasoner": "Gemma-4-26B", "formatter": "DeepSeek-V4-Pro", "label": "Gemma→DS (delegated)"}
+      ],
+      "tasks": 5,
+      "n_per_task": 1,
+      "metrics": ["parse_rate", "accuracy"]
+    },
+    {
+      "id": "E4_GRAMMAR_CONSTRAINED",
+      "description": "Grammar-constrained (GBNF) vs unconstrained — 本地模型",
+      "models": ["Qwen3.6-27B", "Gemma-4-26B", "GLM-4.7-Flash"],
+      "roles": ["EC", "LD", "PI"],
+      "conditions": ["unconstrained", "gbnf_grammar"],
+      "n_per_cell": 3,
+      "max_tokens": 400,
+      "metrics": ["parse_rate", "tokens_per_second"]
+    }
+  ],
+  "statistical_plan": {
+    "primary": "Per-cell parse rate with 95% Clopper-Pearson CI",
+    "effect_size": "Cohen's h for proportion differences",
+    "power_note": "n=3-5 per cell limits precision; CIs reported explicitly"
+  }
+}

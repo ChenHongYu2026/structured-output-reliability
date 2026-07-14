@@ -1,0 +1,82 @@
+[
+  {
+    "pair": "MM\u2192MM",
+    "role": "EC",
+    "trial": 1,
+    "json_valid": true,
+    "error": null,
+    "finish_reason": "stop"
+  },
+  {
+    "pair": "MM\u2192MM",
+    "role": "EC",
+    "trial": 2,
+    "json_valid": false,
+    "error": "Expecting ',' delimiter: line 26 column 6 (char 918)",
+    "finish_reason": "length"
+  },
+  {
+    "pair": "MM\u2192MM",
+    "role": "EC",
+    "trial": 3,
+    "json_valid": false,
+    "error": "Expecting ',' delimiter: line 1 column 273 (char 272)",
+    "finish_reason": "length"
+  },
+  {
+    "pair": "MM\u2192MM",
+    "role": "EC",
+    "trial": 4,
+    "json_valid": false,
+    "error": "Expecting ',' delimiter: line 13 column 80 (char 917)",
+    "finish_reason": "length"
+  },
+  {
+    "pair": "MM\u2192MM",
+    "role": "EC",
+    "trial": 5,
+    "json_valid": false,
+    "error": "no_json_found",
+    "finish_reason": "length"
+  },
+  {
+    "pair": "MM\u2192DS",
+    "role": "EC",
+    "trial": 1,
+    "json_valid": true,
+    "error": null,
+    "finish_reason": "stop"
+  },
+  {
+    "pair": "MM\u2192DS",
+    "role": "EC",
+    "trial": 2,
+    "json_valid": true,
+    "error": null,
+    "finish_reason": "stop"
+  },
+  {
+    "pair": "MM\u2192DS",
+    "role": "EC",
+    "trial": 3,
+    "json_valid": true,
+    "error": null,
+    "finish_reason": "stop"
+  },
+  {
+    "pair": "MM\u2192DS",
+    "role": "EC",
+    "trial": 4,
+    "json_valid": true,
+    "error": null,
+    "finish_reason": "stop"
+  },
+  {
+    "pair": "MM\u2192DS",
+    "role": "EC",
+    "trial": 5,
+    "json_valid": true,
+    "error": null,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "model": "HY-MT2-7B-Q8_0",
+    "role": "PI",
+    "json_valid": true,
+    "json_error": "",
+    "finish_reason": "stop",
+    "content_preview": "{\"dependencies\":[\"users\",\"transactions\"],\"failure_modes\":[\"data_loss\",\"service_unavailability\",\"transaction_inconsistency\"],\"alternatives\":[\"rollback_to_previous_version\",\"partial_migration\",\"replan_m",
+    "timestamp": "2026-07-12T11:35:29.137898+00:00"
+  },
+  {
+    "model": "HY-MT2-7B-Q8_0",
+    "role": "EC",
+    "json_valid": true,
+    "json_error": "",
+    "finish_reason": "stop",
+    "content_preview": "{\"errors\":[{\"type\":\"dependency_error\",\"severity\":\"high\",\"recoverable\":false},{\"type\":\"timeout\",\"severity\":\"medium\",\"recoverable\":true}]}",
+    "timestamp": "2026-07-12T11:35:31.547861+00:00"
+  },
+  {
+    "model": "HY-MT2-7B-Q8_0",
+    "role": "RC",
+    "json_valid": true,
+    "json_error": "",
+    "finish_reason": "stop",
+    "content_preview": "{\"quality_score\":8,\"critique\":[\"point1\",\"point2\",\"point3\"],\"passes_validation\":true,\"recommendation\":\"proceed\"}",
+    "timestamp": "2026-07-12T11:35:33.971665+00:00"
+  },
+  {
+    "model": "HY-MT2-7B-Q8_0",
+    "role": "LD",
+    "json_valid": true,
+    "json_error": "",
+    "finish_reason": "stop",
+    "content_preview": "{\"loop_detected\":false,\"pattern\":\"no repeating failure pattern\",\"consecutive_count\":0,\"recommendation\":\"continue\"}",
+    "timestamp": "2026-07-12T11:35:36.323528+00:00"
+  },
+  {
+    "model": "openai_gpt-oss-20b-MXFP4",
+    "role": "PI",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:35:51.766581+00:00"
+  },
+  {
+    "model": "openai_gpt-oss-20b-MXFP4",
+    "role": "EC",
+    "json_valid": false,
+    "json_error": "Expecting ',' delimiter: line 1 column 113 (char 112)",
+    "finish_reason": "length",
+    "content_preview": "{\"errors\":[{\"type\":\"dependency_error\",\"severity\":\"high\",\"recoverable\":false,\"classification\":\"Rollback Failure\"},{\"type\":\"timeout\",\"severity\":\"medium\",\"recoverable\":true,\"classification\":\"Service Coor",
+    "timestamp": "2026-07-12T11:35:55.005310+00:00"
+  },
+  {
+    "model": "openai_gpt-oss-20b-MXFP4",
+    "role": "RC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:35:58.214842+00:00"
+  },
+  {
+    "model": "openai_gpt-oss-20b-MXFP4",
+    "role": "LD",
+    "json_valid": true,
+    "json_error": "",
+    "finish_reason": "stop",
+    "content_preview": "{\"loop_detected\":false,\"pattern\":\"no repeating failure pattern\",\"consecutive_count\":0,\"recommendation\":\"continue\"}",
+    "timestamp": "2026-07-12T11:36:00.908635+00:00"
+  },
+  {
+    "model": "gemma-4-26B_q4_0-it",
+    "role": "PI",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:36:16.825578+00:00"
+  },
+  {
+    "model": "gemma-4-26B_q4_0-it",
+    "role": "EC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:36:20.507901+00:00"
+  },
+  {
+    "model": "gemma-4-26B_q4_0-it",
+    "role": "RC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:36:24.197565+00:00"
+  },
+  {
+    "model": "gemma-4-26B_q4_0-it",
+    "role": "LD",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:36:27.907028+00:00"
+  },
+  {
+    "model": "DeepSeek-R1-0528-Qwen3-8B-BF16",
+    "role": "PI",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:36:47.467011+00:00"
+  },
+  {
+    "model": "DeepSeek-R1-0528-Qwen3-8B-BF16",
+    "role": "EC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:36:54.679223+00:00"
+  },
+  {
+    "model": "DeepSeek-R1-0528-Qwen3-8B-BF16",
+    "role": "RC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:37:01.898407+00:00"
+  },
+  {
+    "model": "DeepSeek-R1-0528-Qwen3-8B-BF16",
+    "role": "LD",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:37:09.110961+00:00"
+  },
+  {
+    "model": "Qwen3.6-27B-Q5_K_M",
+    "role": "PI",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:37:30.624014+00:00"
+  },
+  {
+    "model": "Qwen3.6-27B-Q5_K_M",
+    "role": "EC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:37:40.040821+00:00"
+  },
+  {
+    "model": "Qwen3.6-27B-Q5_K_M",
+    "role": "RC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:37:49.329983+00:00"
+  },
+  {
+    "model": "Qwen3.6-27B-Q5_K_M",
+    "role": "LD",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:37:58.656536+00:00"
+  },
+  {
+    "model": "GLM-4.7-Flash-Q5_K_M",
+    "role": "PI",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:38:18.725024+00:00"
+  },
+  {
+    "model": "GLM-4.7-Flash-Q5_K_M",
+    "role": "EC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:38:22.538863+00:00"
+  },
+  {
+    "model": "GLM-4.7-Flash-Q5_K_M",
+    "role": "RC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:38:26.328368+00:00"
+  },
+  {
+    "model": "GLM-4.7-Flash-Q5_K_M",
+    "role": "LD",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:38:30.149148+00:00"
+  },
+  {
+    "model": "NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-UD-Q4_K_M",
+    "role": "PI",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:38:50.002461+00:00"
+  },
+  {
+    "model": "NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-UD-Q4_K_M",
+    "role": "EC",
+    "json_valid": false,
+    "json_error": "Expecting ',' delimiter: line 7 column 6 (char 114)",
+    "finish_reason": "length",
+    "content_preview": "{\n  \"errors\": [\n    {\n      \"type\": \"dependency_error\",\n      \"severity\": \"high\",\n      \"recoverable\": false\n    },\n    {\n",
+    "timestamp": "2026-07-12T11:38:53.674913+00:00"
+  },
+  {
+    "model": "NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-UD-Q4_K_M",
+    "role": "RC",
+    "json_valid": false,
+    "json_error": "no_json_found",
+    "finish_reason": "length",
+    "content_preview": "",
+    "timestamp": "2026-07-12T11:38:57.322547+00:00"
+  },
+  {
+    "model": "NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-UD-Q4_K_M",
+    "role": "LD",
+    "json_valid": true,
+    "json_error": "",
+    "finish_reason": "stop",
+    "content_preview": "{\"loop_detected\":false,\"pattern\":\"no repeating failure pattern\",\"consecutive_count\":0,\"recommendation\":\"continue\"}",
+    "timestamp": "2026-07-12T11:39:00.325475+00:00"
+  }
+]
